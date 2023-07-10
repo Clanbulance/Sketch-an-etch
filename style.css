@@ -1,4 +1,89 @@
-html{
+html, body{
     box-sizing: border-box;
     margin: 0px;
+    height: 100vh;
+}
+
+
+body{
+    background-color: rgba(253, 177, 13, 0.295);
+    display: flex;
+    flex-direction: column;
+}
+
+.navigationBar{
+    display:flex;
+    background-color: rgba(207, 31, 140, 0.171);
+    justify-content: center;
+}
+
+
+.navigationBar p{
+    font-size: x-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+
+.mainContainer {
+    display: flex;
+    height:90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameContainer {
+    display: flex;
+    width:700px;
+}
+
+.leftControls{
+    flex:1 1 auto;
+    border: 2px solid black;
+    display:flex;
+    justify-content: center;
+    width:10%;
+   
+    
+   
+}
+
+.rightControls{ 
+    border: 2px solid black;
+    display:flex;
+    justify-content: center;
+    flex:1 1 auto;
+    width:10%;
+}
+
+.drawContainer{
+    border: 2px solid black;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 500px;
+    min-height: 500px;
+    align-items: stretch;
+   flex: 0 0 auto;
+    
+}
+
+
+
+.leftControls p{
+    border:2px solid black;
+    border-radius: 360%;
+    padding:16px;
+    margin-top: 32px;
+}   
+
+.pixel{
+    border:2px solid green;
+    
+    
+    
+
+
+    
+    
+
 }
