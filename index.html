@@ -14,16 +14,27 @@
 <div class="mainContainer">
     <div class="gameContainer">
         <div class="leftControls">
-            <div>
-                <p id="pixelAmount">
-                    
-                </p>
+            <div id="firstLeft">
+                <p id="pixelAmount"></p>
+            </div>
+            <div id="secondLeft">
+                <input 
+                type="range" 
+                aria-orientation="vertical" 
+                min="2"
+                max="20"
+                step="1"
+                id="slider"
+                >
+                
             </div>
         </div>
         <div class="drawContainer">
         </div>
         <div class="rightControls">
-            
+            <div>
+            <button type="button" id="clearButton">Clear</button>
+            </div>
         </div>
         
     </div>
