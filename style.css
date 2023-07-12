@@ -40,8 +40,9 @@ body{
     flex:1 1 auto;
     border: 2px solid black;
     display:flex;
-    justify-content: center;
-    width:10%;
+    width:15%;
+    flex-direction: column;
+    align-items: center;
    
     
    
@@ -52,7 +53,7 @@ body{
     display:flex;
     justify-content: center;
     flex:1 1 auto;
-    width:10%;
+    width:15%;
 }
 
 .drawContainer{
@@ -60,30 +61,60 @@ body{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    background-color: white;
     min-width: 500px;
     min-height: 500px;
-    align-items: stretch;
-   flex: 0 0 auto;
+}
+
+#firstLeft{
+    background-color: brown;
+    color:#eee;
+    border:2px solid brown;
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:0 0 auto;
     
+}
+
+#secondLeft{
+    margin-top:32px;
+    height: 100%;
+
 }
 
 
 
-.leftControls p{
-    border:2px solid black;
-    border-radius: 360%;
-    padding:16px;
-    margin-top: 32px;
-}   
 
 .pixel{
-    border:2px solid green;
-    
-    
-    
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    box-sizing: border-box;
+    display: block;
 
+}
 
-    
-    
+button{
+    background-color: brown;
+    color:#eee;
+    border:2px solid brown;
+    width:80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-top: 32px;
+}
 
+input{
+    writing-mode: bt-lr; /* IE */
+    -webkit-appearance: slider-vertical; /* Chromium */
+    width: 8px;
+    height: 80%;
+    padding: 0 5px;
+    
 }
