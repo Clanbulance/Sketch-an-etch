@@ -1,15 +1,15 @@
 
 //Trying to grab the value of the slider
-const sliderValue = document.querySelector("#pixelAmount");
-const input = document.querySelector("#slider");
-sliderValue.textContent=input.value;
-input.addEventListener("input", (e) => {
-  sliderValue.textContent = e.target.value;
+const sliderValue = document.querySelector("#pixelAmount"); //adjust DOM to right amount
+const input = document.querySelector("#slider");    //select slider
+sliderValue.textContent=input.value; //set dom to pixelamount
+input.addEventListener("input", (e) => { //eventlistner on slider 
+  sliderValue.textContent = e.target.value; //adjust value on display again
   console.log(sliderValue.textContent);
-    rows = sliderValue.textContent;
-    pixels = rows * rows;
+    rows = sliderValue.textContent; //set rows to value from slider
+    pixels = rows * rows; 
     pixelSize = 500/(Math.sqrt(pixels))
-  GenerateCells(pixels)
+  GenerateCells(pixels) //run cellfunction with update value
 });
 
 
@@ -23,7 +23,7 @@ const drawContainer = document.querySelector(".drawContainer");
 
 let pixelSize = 500/(Math.sqrt(pixels))
 
-//generates the divs at the start
+//generates the divs at the start, after this the function gets used to create the
 GenerateCells(pixels)
 function GenerateCells(pixelvalue){
 drawContainer.innerHTML= "";
@@ -34,21 +34,45 @@ for (x = 0; x < pixelvalue; x++){
     pixel.style.height = pixelSize + "px"
     drawContainer.appendChild(pixel);
     const cells = document.querySelectorAll("div.pixel");                   //add listener to cells un function so it does not get removed
-    cells.forEach(cell => cell.addEventListener('mouseenter', colorCell));
+    cells.forEach(cell => cell.addEventListener('mouseenter', colorCell)); // this is now in the GenerateCells function, so it stays alive
 
 }} 
-
-
-
 console.log(`${pixels} squares created`)
 
-// This part makes a nodelist for all the cells and // this is now in the GenerateCells function, so it stays alive
+// this is now in the GenerateCells function, so it stays alive
 // This is now just the color function
-
 function colorCell(e){
 console.log(e)
-e.target.style.backgroundColor = "black"
+e.target.style.backgroundColor = "black";
 }
+
+//eventlistener on red button
+const redButton = document.getElementById("colorButtonRed");
+redButton.addEventListener('click', changeToRed);
+
+//function to remove old eventlistner and add the new one
+function changeToRed(){
+    const cells = document.querySelectorAll("div.pixel")
+    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCell));
+    cells.forEach(cell => cell.addEventListener('mouseenter',colorCellRed));
+};
+
+
+//change the color to red
+function colorCellRed(e){
+    console.log(e);
+    e.target.style.backgroundColor = "red";
+}
+
+
+
+
+
+
+
+
+
+
 
 //Here we make a button to clear all the cells
 const clearButton = document.getElementById("clearButton");
@@ -58,6 +82,24 @@ function clearCells(){
     const cells = document.querySelectorAll("div.pixel");  // added this so it stays alive                 
     cells.forEach(cell => cell.style.backgroundColor = "white")
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
