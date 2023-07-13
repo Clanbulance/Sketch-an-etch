@@ -42,8 +42,8 @@ console.log(`${pixels} squares created`)
 // this is now in the GenerateCells function, so it stays alive
 // This is now just the color function
 function colorCell(e){
-console.log(e)
-e.target.style.backgroundColor = "black";
+    console.log(e)
+    e.target.style.backgroundColor = "black";
 }
 
 //eventlistener on red button
@@ -72,8 +72,8 @@ rainBowButton.addEventListener('click', changeToRainbow);
 //function to remove old eventlistners and add the new one
 function changeToRainbow(){
     const cells = document.querySelectorAll("div.pixel")
-    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCell));
     cells.forEach(cell => cell.removeEventListener('mouseenter', colorCellRed));
+    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCell));
     cells.forEach(cell => cell.addEventListener('mouseenter', colorCellRainbow));
 };
 
@@ -85,13 +85,22 @@ function getRandomColor(){
 }
 
 
-//change the color to red
+//change the color to randomcolor from array
 function colorCellRainbow(e){
     console.log(e);
     e.target.style.backgroundColor = getRandomColor(rainbowCollors);
 };
 
+//function to listen on the black button, this can use the original code for coloring
+const blackButton = document.getElementById("colorBlackButton");
+blackButton.addEventListener('click', changeToBlack);
 
+function changeToBlack(){
+    const cells = document.querySelectorAll("div.pixel")
+    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCellRed));
+    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCellRainbow));
+    cells.forEach(cell => cell.addEventListener('mouseenter', colorCell));
+};
 
 
 
