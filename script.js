@@ -65,6 +65,31 @@ function colorCellRed(e){
 }
 
 
+//eventlistener on RainbowButton
+const rainBowButton = document.getElementById("colorRainbowButton");
+rainBowButton.addEventListener('click', changeToRainbow);
+
+//function to remove old eventlistners and add the new one
+function changeToRainbow(){
+    const cells = document.querySelectorAll("div.pixel")
+    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCell));
+    cells.forEach(cell => cell.removeEventListener('mouseenter', colorCellRed));
+    cells.forEach(cell => cell.addEventListener('mouseenter', colorCellRainbow));
+};
+
+//generate random color
+const rainbowCollors = ['red','blue','yellow','green'];
+
+function getRandomColor(){
+    return rainbowCollors[Math.floor(Math.random()*rainbowCollors.length)];
+}
+
+
+//change the color to red
+function colorCellRainbow(e){
+    console.log(e);
+    e.target.style.backgroundColor = getRandomColor(rainbowCollors);
+};
 
 
 
