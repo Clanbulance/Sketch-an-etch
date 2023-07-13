@@ -81,7 +81,6 @@ body{
 #firstLeft{
     background-color: brown;
     color:#eee;
-    border:2px solid brown;
     width:80px;
     height: 80px;
     border-radius: 50%;
@@ -100,8 +99,6 @@ body{
 }
 
 
-
-
 .pixel{
     border-top: 1px solid black;
     border-left: 1px solid black;
@@ -113,12 +110,45 @@ body{
 button{
     background-color: brown;
     color:#eee;
-    border:2px solid brown;
     width:80px;
     height: 80px;
     border-radius: 50%;
     margin-top: 32px;
+    transition: all .2s ease-in-out;
+    border:none;
 }
+
+
+button#clearButton{
+    background-color: grey;
+}
+
+button#colorButtonRed{
+    background-color: red;
+}
+
+button#colorBlackButton{
+    background-color: black;
+}
+
+button#colorRainbowButton{
+    background: linear-gradient(
+        96deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+    
+
 
 input{
     writing-mode: bt-lr; /* IE */
@@ -126,5 +156,16 @@ input{
     width: 8px;
     height: 80%;
     padding: 0 5px;
+    
+}
+
+
+
+
+button:hover{
+    scale:1.2;
+}
+
+input{
     
 }
